@@ -1,0 +1,51 @@
+GET http://localhost:3000/users
+###
+POST http://localhost:3000/api/v1/auth/signup
+Content-Type: application/json
+
+{
+"firstName":"John",
+"lastName":"Doe",
+"email": "jaeeg@gmail.com",
+"password": "password"
+}
+
+###
+POST http://localhost:3000/api/v1/auth/signin
+Content-Type: application/json
+
+
+{
+"email": "julie@gmail.com",
+"password": "password"
+}
+
+###
+POST http://localhost:3000/api/v1/todos
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZmVhZTI2M2E3ZDAwMTI0Y2M1MzZlZTUiLCJlbWFpbCI6Imp1bGllQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsImlhdCI6MTYwOTIzOTQwMCwiZXhwIjoxNjA5MzI1ODAwfQ.fwrZ_vFJi6SZ7hFHlHEFgh2pMOC0sDiwwRG8fvgzVRs
+
+{
+"task":"Office runs"
+}
+
+###
+GET http://localhost:3000/api/v1/todos
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZmVhZTI2M2E3ZDAwMTI0Y2M1MzZlZTUiLCJlbWFpbCI6Imp1bGllQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsImlhdCI6MTYwOTIzOTQwMCwiZXhwIjoxNjA5MzI1ODAwfQ.fwrZ_vFJi6SZ7hFHlHEFgh2pMOC0sDiwwRG8fvgzVRs
+###
+GET http://localhost:3000/api/v1/todos/5feafe0a06f72f1d0014ac72
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZmVhZTI2M2E3ZDAwMTI0Y2M1MzZlZTUiLCJlbWFpbCI6Imp1bGllQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsImlhdCI6MTYwOTIzOTQwMCwiZXhwIjoxNjA5MzI1ODAwfQ.fwrZ_vFJi6SZ7hFHlHEFgh2pMOC0sDiwwRG8fvgzVRs
+###
+PUT http://localhost:3000/api/v1/todos/5feafe0a06f72f1d0014ac72
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZmVhZTI2M2E3ZDAwMTI0Y2M1MzZlZTUiLCJlbWFpbCI6Imp1bGllQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsImlhdCI6MTYwOTIzOTQwMCwiZXhwIjoxNjA5MzI1ODAwfQ.fwrZ_vFJi6SZ7hFHlHEFgh2pMOC0sDiwwRG8fvgzVRs
+
+{
+"task":"Goldnb runs"
+}
+###
+DELETE http://localhost:3000/api/v1/todos/5feb83f0d61d14403cafa054
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZmVhZTI2M2E3ZDAwMTI0Y2M1MzZlZTUiLCJlbWFpbCI6Imp1bGllQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsImlhdCI6MTYwOTIzOTQwMCwiZXhwIjoxNjA5MzI1ODAwfQ.fwrZ_vFJi6SZ7hFHlHEFgh2pMOC0sDiwwRG8fvgzVRs
