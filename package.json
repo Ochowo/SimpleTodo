@@ -10,8 +10,8 @@
   },
   "scripts": {
     "start:dev": "cross-env NODE_ENV=development nodemon --exec babel-node server.js",
-    "test": "jest ./test/index.spec.js --detectOpenHandles",
-    "jest:coverage": "jest ./test/index.spec.js --coverage --detectOpenHandles",
+    "test": "jest ./test/index.spec.js --detectOpenHandles --runInBand",
+    "jest:coverage": "jest ./test/index.spec.js --coverage --detectOpenHandles --runInBand",
     "coveralls": "jest ./test/index.spec.js  --coverage --coverageReporters=text-lcov | coveralls"
   },
   "keywords": [],
@@ -19,6 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.12.10",
+    "amqplib": "^0.6.0",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "coveralls": "^3.1.0",
@@ -28,7 +29,11 @@
     "express-validator": "^6.7.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.20",
-    "mongoose": "^5.11.8"
+    "mongoose": "^5.11.8",
+    "nodemailer": "^6.4.17",
+    "pino": "^6.8.0",
+    "pino-pretty": "^4.3.0",
+    "smtp-server": "^3.8.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",

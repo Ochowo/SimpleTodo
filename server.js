@@ -1,9 +1,13 @@
 import mongoose from 'mongoose';
 import app from './app';
 import config from './src/helpers/config';
+import mailer from './src/services/mailer';
+import rabbitMQ from './src/messaging/rabbitMQ';
 
 let server;
 mongoose.connect(config.mongoose.url, config.mongoose.options).then(() => {
+  rabbitMQ.start();
+  mailer.start();
   console.log('Connected to MongoDB');
   server = app.listen(config.port, () => {
     console.log(`Listening to port ${config.port}`);
