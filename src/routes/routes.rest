@@ -49,3 +49,11 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZmVhZTI2M2E3
 DELETE http://localhost:3000/api/v1/todos/5feb83f0d61d14403cafa054
 Content-Type: application/json
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZmVhZTI2M2E3ZDAwMTI0Y2M1MzZlZTUiLCJlbWFpbCI6Imp1bGllQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkpvaG4iLCJsYXN0TmFtZSI6IkRvZSIsImlhdCI6MTYwOTIzOTQwMCwiZXhwIjoxNjA5MzI1ODAwfQ.fwrZ_vFJi6SZ7hFHlHEFgh2pMOC0sDiwwRG8fvgzVRs
+###
+
+POST http://localhost:3000/api/v1/send
+Content-Type: application/json
+
+{
+"email": "ochowoikongbeh@gmail.com",
+}

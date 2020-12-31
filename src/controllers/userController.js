@@ -17,7 +17,6 @@ class UserController {
         return response.send(res);
       }
       const user = await userService.signup(req.body);
-      console.log(user, 'lll');
       const {
         id, firstName, lastName, email,
       } = user;
@@ -34,7 +33,6 @@ class UserController {
       }
       return response.send(res);
     } catch (error) {
-      console.log(error, 'ppp');
       response.setError(500, error.message);
       return response.send(res);
     }

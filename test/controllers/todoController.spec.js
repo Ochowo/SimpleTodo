@@ -12,7 +12,6 @@ import {
 setupTestDB();
 dotenv.config();
 const request = supertest(app);
-const srv = app.listen();
 
 let error = null;
 let newToken;
@@ -30,7 +29,6 @@ describe('Todo Controller Test', () => {
     const res = await request.post('/api/v1/todos').send(todo).set('authorization', token);
     expect(res.status).toBe(201);
     done();
-    srv.close();
   });
 
   it('should not create todo without authentication token', async (done) => {

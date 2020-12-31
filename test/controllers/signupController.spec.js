@@ -12,7 +12,6 @@ import {
 setupTestDB();
 dotenv.config();
 const request = supertest(app);
-const srv = app.listen();
 
 let error = null;
 describe('Signup Controller Test', () => {
@@ -21,7 +20,6 @@ describe('Signup Controller Test', () => {
     // Object Id should be defined when successfully saved to MongoDB.
     expect(res.status).toBe(201);
     done();
-    srv.close();
   });
 
   it('should not log in an existing user', async (done) => {
