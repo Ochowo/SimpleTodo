@@ -1,2 +1,3 @@
 # SimpleTodo
-[![SimpleTodo](https://circleci.com/<VCS>/<ORG_NAME>/SimpleTodo.svg?style=svg)](<LINK>)
+
+[![CircleCI](https://circleci.com/gh/Ochowo/SimpleTodo.svg?style=shield)](https://circleci.com/gh/Ochowo/simpleTodo)
