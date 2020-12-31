@@ -1,12 +1,8 @@
-import emailService from '../services/emailService';
 // import emailErrorService from '../services/email_error_service';
-import mailer from '../services/mailer';
+import mailer from './mailer';
 import Email from '../models/emailModel';
 // import EmailError from '../model/email_error_schema';
-import resultSender from '../services/rabbitMQService';
-import Response from '../helpers/response';
-
-const response = new Response();
+import resultSender from './rabbitMQService';
 
 const log = require('pino')({ prettyPrint: true });
 const mailerConfig = require('../config/mailerConfig')();
@@ -19,27 +15,6 @@ const sendMail = (mail, isFromRabbitMq) => {
     if (isFromRabbitMq) {
       resultSender.sendPositiveResult(JSON.stringify(mail));
     }
-  //   emailService.createOne(email)
-  //     .then((info) => { }/* log.info(JSON.stringify(info)) */)
-  //     .catch((err) => log.error(`[Mail controller] Error saving mail to DB: ${JSON.stringify(err)}`));
-  // }).catch((error) => {
-  //   log.error(`[Mail controller] Error sending mail: ${JSON.stringify(error)}`);
-  //   const emailError = response.setError(error.code, error.name, error.message);
-  //   console.log(error, 'ght')
-    // const emailError = new EmailError({
-    //   code: error.code,
-    //   command: error.command,
-    //   type: error.name,
-    //   msg: error.message,
-    //   request_body: mail,
-    // });
-    // if (isFromRabbitMq) {
-    //   resultSender.sendNegativeResult(JSON.stringify(emailError));
-    // }
-    //return response.send(emailError);
-    // emailErrorService.createOne(emailError)
-    //   .then((info) => { }/* log.info(JSON.stringify(info)) */)
-    //   .catch((err) => log.error(`[Mail controller] Error saving mail error to DB: ${JSON.stringify(err)}`));
   });
 };
 
