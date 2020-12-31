@@ -1,11 +1,13 @@
-FROM  node:12.16.1
+FROM cimg/node:14.0.0
 
 LABEL author="Ochowo Ikongbeh"
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-COPY package.json /usr/src/app/
+
+WORKDIR /demo-app
+
+COPY package*.json ./
+
 RUN npm install
-COPY . /usr/src/app
-EXPOSE 3000
-CMD ["npm", "start"]
- 
+
+COPY . ./
+
+CMD [ "npm", "start" ]

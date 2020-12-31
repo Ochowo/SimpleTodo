@@ -1,21 +1,34 @@
 version: 2.1
-machine:
-  timezone: America/New_York
-  node:
-    version: 4.0.0
 
-database:
-  pre:
-    - sudo service mongodb stop
-    - curl -Ol https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-ubuntu1204-3.2.3.tgz
-    - tar -zxvf mongodb-linux-x86_64-ubuntu1204-3.2.3.tgz
-    - mkdir -p ./data/db
-    - ./mongodb-linux-x86_64-ubuntu1204-3.2.3/bin/mongod --dbpath ./data/db --logpath ./mongod.log --fork || cat ./mongod.log
+workflows:
+  build_test:
+    jobs:
+      - node/test:
+          matrix:
+            parameters:
+              version:
+                - 14.0.0
+                - 13.11.0
+                - 12.16.0
+      - build_docker_image:
+          requires:
+            - node/test
 
-dependencies:
-  override:
-    - npm install
-
-test:
-  override:
-    - npm test
+jobs:
+  build_docker_image:
+    docker:
+      - image: cimg/node:14.0.0
+    steps:
+      - checkout
+      - setup_remote_docker:
+          #available on performance plan
+          docker_layer_caching: true
+      - run: 
+          name: Set up tag 
+          command: echo "export TAG=0.1.$CIRCLE_SHA1" >> $BASH_ENV
+      - run: 
+          name: Build Docker image
+          command: |
+            docker build -t your-image:$TAG .
+orbs:
+  node: circleci/node@4.0.0
