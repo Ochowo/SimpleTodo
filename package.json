@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start:dev": "cross-env NODE_ENV=development nodemon --exec babel-node server.js",
-    "test": "jest ./test/index.spec.js --detectOpenHandles --runInBand",
+    "test": "cross-env NODE_ENV=test jest ./test/index.spec.js --detectOpenHandles --runInBand",
     "jest:coverage": "jest ./test/index.spec.js --coverage --detectOpenHandles --runInBand",
     "coveralls": "jest ./test/index.spec.js  --coverage --coverageReporters=text-lcov | coveralls"
   },
