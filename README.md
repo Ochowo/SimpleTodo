@@ -11,6 +11,7 @@ A Simple Todo App
  * Users can edit their **todo** records.
  * Users can view their **todo** records.
  * Users can delete their **todo** records.
+ * Users can send email invitationto users to join the app.
  
 ##### Technologies Used
 * NodeJs
