@@ -1,4 +1,6 @@
 version: 2.1
+orbs:
+  coveralls: coveralls/coveralls@1.0.4
 jobs:
   build:
     working_directory: ~/nodejs-express-mongodb
@@ -13,3 +15,6 @@ jobs:
       - run:
           name: test
           command: npm test
+      - run: # run code coverage report
+          name: code-coverage
+          command: npm run coverage

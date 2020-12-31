@@ -11,8 +11,8 @@
   "scripts": {
     "start:dev": "cross-env NODE_ENV=development nodemon --exec babel-node server.js",
     "test": "cross-env NODE_ENV=test jest ./test/index.spec.js --detectOpenHandles --runInBand",
-    "jest:coverage": "jest ./test/index.spec.js --coverage --detectOpenHandles --runInBand",
-    "coveralls": "jest ./test/index.spec.js  --coverage --coverageReporters=text-lcov | coveralls"
+    "jest:coverage": "cross-env NODE_ENV=test jest ./test/index.spec.js --coverage --detectOpenHandles --runInBand",
+    "coverage": "cross-env NODE_ENV=test jest ./test/index.spec.js  --coverage --coverageReporters=text-lcov | coveralls"
   },
   "keywords": [],
   "author": "",
