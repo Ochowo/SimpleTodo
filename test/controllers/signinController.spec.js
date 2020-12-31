@@ -16,7 +16,6 @@ describe('Signup Controller Test', () => {
   it('login user successfully', async (done) => {
     await request.post('/api/v1/auth/signup').send(newUser);
     const res = await request.post('/api/v1/auth/signin').send(newUser);
-    // Object Id should be defined when successfully saved to MongoDB.
     expect(res.status).toBe(200);
     done();
   });
