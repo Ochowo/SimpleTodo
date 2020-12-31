@@ -1,4 +1,4 @@
-import mailerController from '../controllers/mailController';
+import mailerController from './mailController';
 
 const log = require('pino')({ prettyPrint: true });
 const mailsQueue = require('../config/rabbitMQConfig').queues.mails;

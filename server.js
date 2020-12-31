@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import app from './app';
 import config from './src/helpers/config';
-import mailer from './src/services/mailer';
+import mailer from './src/messaging/mailer';
 import rabbitMQ from './src/messaging/rabbitMQ';
 
 let server;

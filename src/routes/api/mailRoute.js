@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import mailCtrl from '../../controllers/mailController';
+import mailCtrl from '../../messaging/mailController';
 import mailerResponse from '../../models/mailerResponse';
 
 const log = require('pino')({ prettyPrint: true });

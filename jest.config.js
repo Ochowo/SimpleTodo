@@ -5,6 +5,6 @@ module.exports = {
     NODE_ENV: 'test',
   },
   restoreMocks: true,
-  coveragePathIgnorePatterns: ['node_modules', 'src/config', './app.js', 'tests'],
+  coveragePathIgnorePatterns: ['node_modules', 'src/config', './app.js', 'tests', 'src/messaging'],
   coverageReporters: ['text', 'lcov', 'clover', 'html'],
 };
