@@ -1,8 +1,5 @@
 import { Router } from 'express';
-import mailCtrl from '../../messaging/mailController';
-import mailerResponse from '../../models/mailerResponse';
-
-const log = require('pino')({ prettyPrint: true });
+import { sendEMail } from '../../controllers/mailController';
 
 const router = Router();
 
@@ -14,9 +11,11 @@ router.post('/send', (req, res) => {
     html: '<p>Hey there!<br> Join todo app and become more productive</p><br><p>Click <a href="http://localhost:3000/api/vi/auth/signup">here</a> to register</p>',
   };
   console.log(mail, 'pgt');
-  log.debug(`REST request to send a mail: ${JSON.stringify(mail)}`);
-  mailCtrl.sendMail(mail, false);
-  mailerResponse.message = 'Mail has been sent!';
+  sendEMail(mail);
+  const mailerResponse = {
+    message: 'Mail has been sent!',
+    time: new Date(),
+  };
   return res.status(200).json(mailerResponse);
 });
 

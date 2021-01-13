@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
-import config from '../../src/helpers/config';
+import config from '../../src/config/config';
 
 const setupTestDB = () => {
-  console.log(config.mongoose.url)
+  console.log(config.mongoose.url);
   beforeAll(async () => {
     await mongoose.connect(config.mongoose.url, config.mongoose.options);
   });
@@ -14,8 +14,7 @@ const setupTestDB = () => {
   });
 
   afterAll(async () => {
-    
-  console.log(config.mongoose.url, 'ewq')
+    console.log(config.mongoose.url, 'ewq');
     await new Promise((resolve) => setTimeout(() => resolve(), 500));
     await mongoose.disconnect();
   });
